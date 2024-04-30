@@ -1,13 +1,8 @@
-"""Module docstring"""
 from django.db import models
 from django.contrib.auth.models import User
 
 
 class Project(models.Model):
-    """
-    docstring
-    """
-
     name = models.CharField(max_length=100)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -17,10 +12,6 @@ class Project(models.Model):
 
 
 class Task(models.Model):
-    """
-    docstring
-    """
-
     STATUS_CHOICES = [
         ('New', 'Новая'),
         ('In_progress', 'В работе'),

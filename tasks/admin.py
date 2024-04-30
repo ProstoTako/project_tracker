@@ -1,13 +1,8 @@
-"""Module docstring"""
-
 from django.contrib import admin
 from .models import Project, Task
 
 
 class TaskInline(admin.TabularInline):
-    """
-    Inline класс для модели Task
-    """
     model = Task
     extra = 0
     fields = ('name', 'description', 'assignee', 'status', 'created_at', 'updated_at')
@@ -18,10 +13,6 @@ class TaskInline(admin.TabularInline):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    """
-    Класс администратора для модели Project
-    """
-
     list_display = ('name', 'created_at')
     search_fields = ('name', 'description')
     ordering = ('created_at',)
@@ -32,10 +23,6 @@ class ProjectAdmin(admin.ModelAdmin):
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    """
-    Класс администратора для модели Project
-    """
-
     list_display = ('name', 'project', 'assignee', 'status', 'created_at', 'updated_at')
     list_filter = ('status', 'assignee', 'project')
     search_fields = ('name', 'description')
