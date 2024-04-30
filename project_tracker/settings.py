@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'tasks.apps.TasksConfig',
+    'quality_control.apps.QualityControlConfig',
 ]
 
 MIDDLEWARE = [

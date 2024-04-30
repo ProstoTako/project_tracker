@@ -112,7 +112,7 @@ from django.views import View
 from django.views.generic import ListView, DetailView, CreateView
 from django.views.generic.edit import UpdateView, DeleteView
 from .models import Project, Task
-from .forms import FeedbackForm, ProjectForm, TaskForm
+from .forms import ProjectForm, TaskForm
 
 
 class IndexView(View):
