@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    Контроль качества
+{% endblock %}
+
+{% block content %}
+    <h1>{{ bugreport.title }}</h1>
+    <h3>Статус: {{bugreport.status}}</h3>
+    <h3>Приоритет: {{bugreport.priority}}</h3>
+    <h3>Описание:</h3>
+        <ul>{{bugreport.description}}</ul>
+    <h3>Проект:</h3>
+        <ul>
+            <a href="{% url 'tasks:project_detail' bugreport.project.id %}">
+                {{bugreport.project.name}}
+            </a>
+        </ul>
+    <h3>Задача:</h3>
+        <ul>
+            <a href="{% url 'tasks:task_detail' bugreport.project.id bugreport.task.id %}">
+                {{bugreport.task.name}}
+            </a>
+        </ul>
+{% endblock %}
+

@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    Контроль качества
+{% endblock %}
+
+{% block content %}
+    <h1>{{ featurerequest.title }}</h1>
+    <h3>Статус: {{featurerequest.status}}</h3>
+    <h3>Приоритет: {{featurerequest.priority}}</h3>
+    <h3>Описание:</h3>
+        <ul>{{featurerequest.description}}</ul>
+    <h3>Проект:</h3>
+        <ul>
+            <a href="{% url 'tasks:project_detail' featurerequest.project.id %}">
+                {{featurerequest.project.name}}
+            </a>
+        </ul>
+    <h3>Задача:</h3>
+        <ul>
+            <a href="{% url 'tasks:task_detail' featurerequest.project.id featurerequest.task.id %}">
+                {{featurerequest.task.name}}
+            </a>
+        </ul>
+{% endblock %}
