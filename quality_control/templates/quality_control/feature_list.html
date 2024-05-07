@@ -6,6 +6,7 @@
 
 {% block content %}
     <h1>Список запросов на улучшение</h1>
+    <a href={% url "q_control:create_feature_request" %}>Создать новый запрос на улучшение</a>
     <ul>
         {% for feature in features %}
             <li>
