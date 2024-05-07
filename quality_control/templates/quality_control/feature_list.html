@@ -8,7 +8,7 @@
     <h1>Список запросов на улучшение</h1>
     <a href={% url "q_control:create_feature_request" %}>Создать новый запрос на улучшение</a>
     <ul>
-        {% for feature in features %}
+        {% for feature in featurerequest_list %}
             <li>
                 <a href="{% url 'q_control:feature_detail' feature.id %}">
                 {{feature.title}} ({{feature.status}})</a>
