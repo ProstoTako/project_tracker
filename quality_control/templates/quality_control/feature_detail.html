@@ -6,6 +6,22 @@
 
 {% block content %}
     <h1>{{ featurerequest.title }}</h1>
+    <!-- Ссылка на изменение запроса улучшения -->
+    <ul>
+        <li><a href={% url "q_control:update_feature_request" featurerequest.id %}>
+            Редактировать
+        </a></li>
+    </ul>
+    <!-- Ссылка на удаление запроса улучшения -->
+    <ul>
+        <li>
+            <a href={% url "q_control:delete_feature_request" featurerequest.id %}
+            onclick="return confirm('Вы уверены, что хотите удалить этот запрос?');">
+                Удалить
+            </a>
+        </li>
+    </ul>
+
     <h3>Статус: {{featurerequest.status}}</h3>
     <h3>Приоритет: {{featurerequest.priority}}</h3>
     <h3>Описание:</h3>
