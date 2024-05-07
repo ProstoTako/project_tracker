@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h1>Удаление репорта</h1>
+    <p>Вы уверены, что хотите удалить репорт "{{ bugreport.title }}"?</p>
+
+    <form action="{% url 'q_control:delete_bug_report' bugreport.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Удалить">
+        <a href="{% url 'q_control:delete_bug_report' bugreport.id %}">Отмена</a>
+    </form> 
+{% endblock %}

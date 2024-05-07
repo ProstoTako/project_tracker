@@ -1,4 +1,4 @@
-# '''
+'''
 
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import FeedbackForm, ProjectForm, TaskForm
@@ -190,4 +190,4 @@ class TaskDeleteView(DeleteView):
         return reverse_lazy('tasks:project_detail', kwargs={'project_id': self.object.project.id})
 
 
-'''
+# '''
